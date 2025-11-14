@@ -92,12 +92,21 @@
       class="relative min-h-screen flex flex-col justify-center items-center text-center px-6"
     >
       <div
-        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?w=1200&q=80')] bg-cover bg-center opacity-30"
-      ></div>
-      <div class="absolute inset-0 bg-black/80"></div>
+        class="absolute inset-0  opacity-30"
+      >
+     <video
+              class="w-full rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-500"
+              src="hero.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+    </div>
+      <div class="absolute inset-0 bg-black/20"></div>
       <div class="relative z-10">
         <h1
-          class="text-5xl md:text-6xl text-center font-extrabold text-[var(--accent)] typing"
+          class="text-5xl md:text-6xl text-center inline-block font-extrabold text-[var(--accent)] typing"
         >
           Titik Irfana
         </h1>
@@ -119,7 +128,7 @@
     >
       <div class="flex-1 fade-in">
         <img
-          src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&q=80"
+          src="jeje.jpg"
           alt="Irfana Portrait"
           class="rounded-2xl shadow-2xl border-4 border-[var(--accent)]"
         />
