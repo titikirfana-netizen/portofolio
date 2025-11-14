@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>portofolio.irfana — Photography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --accent: #facc15; /* warm yellow */
+        --bg-dark: #0a0a0a; /* pure black base */
+        --bg-soft: #111111; /* dark grayish */
+        --text-light: #f5f5dc; /* soft beige */
+      }
+
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+      .fade-in.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .gallery img {
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+      }
+      .gallery img:hover {
+        transform: scale(1.05) rotate(1deg);
+        box-shadow: 0 10px 25px rgba(250, 204, 21, 0.3);
+      }
+
+      .typing {
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 2px solid var(--accent);
+        animation: typing 3s steps(24, end), blink 0.8s step-end infinite;
+      }
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+
+      /* Lightbox styles */
+      .lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.95);
+        justify-content: center;
+        align-items: center;
+        z-index: 50;
+      }
+      .lightbox img {
+        max-width: 90%;
+        max-height: 80%;
+        border-radius: 10px;
+        box-shadow: 0 0 25px rgba(250, 204, 21, 0.6);
+        transition: transform 0.3s ease;
+      }
+      .lightbox.active {
+        display: flex;
+        animation: fadeIn 0.4s ease;
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+    </style>
+  </head>
+  <body
+    class="bg-[var(--bg-dark)] text-[var(--text-light)] selection:bg-[var(--accent)] selection:text-black"
+  >
+    <!-- HERO SECTION -->
+    <section
+      class="relative min-h-screen flex flex-col justify-center items-center text-center px-6"
+    >
+      <div
+        class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?w=1200&q=80')] bg-cover bg-center opacity-30"
+      ></div>
+      <div class="absolute inset-0 bg-black/80"></div>
+      <div class="relative z-10">
+        <h1
+          class="text-5xl md:text-6xl font-extrabold text-[var(--accent)] typing"
+        >
+          Titik Irfana uhuyyy
+        </h1>
+        <p class="mt-4 text-lg text-gray-300 max-w-xl mx-auto fade-in">
+          Capturing timeless emotions through the art of light and shadow.
+        </p>
+        <a
+          href="#gallery"
+          class="mt-6 inline-block bg-[var(--accent)] text-black font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 transition"
+          >Explore Gallery</a
+        >
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section
+      id="about"
+      class="max-w-6xl mx-auto py-20 px-6 text-center md:text-left flex flex-col md:flex-row items-center gap-10"
+    >
+      <div class="flex-1 fade-in">
+        <img
+          src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=600&q=80"
+          alt="Irfana Portrait"
+          class="rounded-2xl shadow-2xl border-4 border-[var(--accent)]"
+        />
+      </div>
+      <div class="flex-1 fade-in">
+        <h2 class="text-3xl font-bold text-[var(--accent)] mb-6">About Me</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Hi, I’m
+          <span class="font-semibold text-[var(--accent)]">Irfana</span> — a
+          passionate photographer who transforms ordinary moments into
+          extraordinary visuals. From portraits to landscapes, my lens tells
+          stories where light meets emotion.
+        </p>
+        <p class="mt-4 text-gray-400 italic">
+          “Photography is not about the camera, but about the soul behind it.”
+        </p>
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="bg-[var(--bg-soft)] py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-3xl font-bold text-center text-[var(--accent)] mb-10 fade-in"
+        >
+          My Gallery
+        </h2>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 gallery"
+        >
+          <img
+            src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80"
+            class="rounded-xl fade-in cursor-pointer"
+            alt="Ocean"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?w=800&q=80"
+            class="rounded-xl fade-in cursor-pointer"
+            alt="Mountains"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80"
+            class="rounded-xl fade-in cursor-pointer"
+            alt="Portrait"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1499084732479-de2c02d45fc4?w=800&q=80"
+            class="rounded-xl fade-in cursor-pointer"
+            alt="Studio"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1496307042754-b4aa456c4a2d?w=800&q=80"
+            class="rounded-xl fade-in cursor-pointer"
+            alt="Street"
+          />
+          <img
+            src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80"
+            class="rounded-xl fade-in cursor-pointer"
+            alt="Nature"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO PORTFOLIO SECTION -->
+    <section id="video" class="bg-[#0d0d0d] py-20">
+      <div class="max-w-6xl mx-auto px-6">
+        <h2
+          class="text-3xl font-bold text-center text-[var(--accent)] mb-10 fade-in"
+        >
+          Video Portfolio
+        </h2>
+        <p class="text-gray-400 text-center max-w-2xl mx-auto mb-12 fade-in">
+          A collection of moving moments — storytelling through motion and
+          emotion.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Video 1 -->
+          <div class="relative rounded-xl overflow-hidden fade-in group">
+            <video
+              class="w-full rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-500"
+              src="https://inivie.com/new-hero.mp4"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+            <div
+              class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+            >
+              <p class="text-[var(--accent)] font-semibold text-lg">
+                Ocean Serenity
+              </p>
+            </div>
+          </div>
+
+          <!-- Video 2 -->
+          <div class="relative rounded-xl overflow-hidden fade-in group">
+            <video
+              class="w-full rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-500"
+              src="https://cdn.pixabay.com/vimeo/330622227/mountain-21753.mp4?width=1280&hash=8f9457d7c2309c43f748f9b299f820b7"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+            <div
+              class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+            >
+              <p class="text-[var(--accent)] font-semibold text-lg">
+                Mountain Spirit
+              </p>
+            </div>
+          </div>
+
+          <!-- Video 3 -->
+          <div class="relative rounded-xl overflow-hidden fade-in group">
+            <video
+              class="w-full rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-500"
+              src="https://cdn.pixabay.com/vimeo/371861436/street-30294.mp4?width=1280&hash=39c934948865f177d39e7d4c4822a72a"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+            <div
+              class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+            >
+              <p class="text-[var(--accent)] font-semibold text-lg">
+                Urban Motion
+              </p>
+            </div>
+          </div>
+
+          <!-- Video 4 -->
+          <div class="relative rounded-xl overflow-hidden fade-in group">
+            <video
+              class="w-full rounded-xl shadow-lg group-hover:scale-105 transition-transform duration-500"
+              src="https://cdn.pixabay.com/vimeo/335631928/nature-22926.mp4?width=1280&hash=6dd7c2957b177b6c6c39edb6f75fa33e"
+              autoplay
+              muted
+              loop
+              playsinline
+            ></video>
+            <div
+              class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition"
+            >
+              <p class="text-[var(--accent)] font-semibold text-lg">
+                Nature Flow
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="bg-black py-20 text-center">
+      <h2 class="text-3xl font-bold text-[var(--accent)] mb-6 fade-in">
+        Let’s Connect
+      </h2>
+      <p class="text-gray-400 max-w-xl mx-auto fade-in">
+        Got a project in mind? Let’s collaborate and create something truly
+        captivating together 📸
+      </p>
+      <form class="mt-10 max-w-md mx-auto grid gap-4 fade-in">
+        <input
+          type="text"
+          placeholder="Your Name"
+          class="bg-[#1a1a1a] border border-gray-700 p-3 rounded-md w-full text-white placeholder-gray-500"
+        />
+        <input
+          type="email"
+          placeholder="Your Email"
+          class="bg-[#1a1a1a] border border-gray-700 p-3 rounded-md w-full text-white placeholder-gray-500"
+        />
+        <textarea
+          placeholder="Your Message"
+          class="bg-[#1a1a1a] border border-gray-700 p-3 rounded-md w-full h-32 text-white placeholder-gray-500"
+        ></textarea>
+        <button
+          class="bg-[var(--accent)] text-black py-3 rounded-md font-semibold hover:scale-105 transition"
+        >
+          Send Message
+        </button>
+      </form>
+    </section>
+
+    <footer
+      class="bg-black border-t border-gray-800 py-6 text-center text-gray-500 text-sm"
+    >
+      © <span id="year"></span> portofolio.irfana — Made with ❤️ and a cup of
+      hot chocolate ☕
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox">
+      <img src="" alt="Preview" />
+    </div>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      // Reveal on scroll
+      const fades = document.querySelectorAll(".fade-in");
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("active");
+              io.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.2 }
+      );
+      fades.forEach((el) => io.observe(el));
+
+      // Lightbox functionality
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = lightbox.querySelector("img");
+      document.querySelectorAll(".gallery img").forEach((img) => {
+        img.addEventListener("click", () => {
+          lightboxImg.src = img.src;
+          lightbox.classList.add("active");
+        });
+      });
+      lightbox.addEventListener("click", () =>
+        lightbox.classList.remove("active")
+      );
+    </script>
+  </body>
+</html>
